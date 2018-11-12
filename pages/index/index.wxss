@@ -1,0 +1,70 @@
+/**index.wxss**/
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.card-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.extra-infos {
+  margin-left: 10rpx;
+  display: inline-block;
+  color: #8e8e93;
+}
+
+.num {
+  color: #cf9f73;
+  font-weight: bold;
+  padding: 0 8rpx;
+}
+
+.num-row {
+  width: 100%;
+  margin-top: 40rpx;
+}
+
+.num-item {
+  width: 33%;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.num-item > text:first-child {
+  color: #333;
+  font-weight: bold;
+  font-size: 34rpx;
+}
+
+.num-item > text:last-child {
+  color: #c7c7cb;
+}

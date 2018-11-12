@@ -1,0 +1,8 @@
+<view class="i-class i-tab-bar-item">
+  <image wx:if="{{ icon || currentIcon }}" class="tab-bar-item-icon {{ current ? 'item-index--i-tab-bar-item-icon-current' : '' }}" color="{{ current ? currentColor : '' }}" type="{{ current ? currentIcon : icon }}" size="22"></image>
+  <image wx:else class="i-tab-bar-item-img" src="{{ current ? currentImg : img }}"></image>
+  <view class="i-tab-bar-item-title {{ current ? 'i-tab-bar-item-title-current' : '' }}" wx:if="{{ current && currentColor }}" style="color: {{ currentColor }}">{{ title }}</view>
+  <view class="i-tab-bar-item-title {{ current ? 'i-tab-bar-item-title-current' : '' }}" wx:else>{{ title }}</view>
+  <button wx:if="{{btnType == 'contact'}}" class="btn-contact" open-type='contact'>
+  </button>
+</view>
