@@ -6,6 +6,7 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
     </block>
+    <view>我的第一次修改</view>
   </view>
   <!-- <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
