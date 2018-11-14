@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "wux-UI",
+  "navigationBarTitleText": "Wux-UI",
   "usingComponents": {
     "ui-card": "../../components/card/index",
     "ui-tab-bar": "../../components/tab-bar/index",
