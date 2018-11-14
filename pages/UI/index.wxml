@@ -1,0 +1,51 @@
+<!-- pages/UI/index.wxml -->
+<!-- 浮动按钮 -->
+<wux-floating-button position="{{ position }}" buttons="{{ buttons }}" bind:change="onChange" bind:click="onClick" />
+<view class="page" hover-class="none" hover-stop-propagation="false">
+  <ui-card title="{{userInfo.nickName}}" flex-dire="column" item-flex-dire="column" thumb="{{userInfo.avatarUrl}}">
+    <view slot="extra">
+      <view class='row'>
+        <image class="sm_icon" src='/images/mysel.png'></image>
+        <text class='extra-infos'>已有<text class="num">8</text>张书签</text>
+      </view>
+    </view>
+    <view slot="content">
+      <view class='row num-row'>
+        <view class="num-item">
+          <text>0</text>
+          <text>今日有效阅读</text>
+        </view>
+        <view class="num-item">
+          <text>0</text>
+          <text>今日总计阅读</text>
+        </view>
+        <view class="num-item">
+          <text>0</text>
+          <text>今日阅读书签</text>
+        </view>
+      </view>
+    </view>
+  </ui-card>
+  <wux-cell-group title="菜单列表">
+    <wux-cell title="联系客服" is-link open-type="contact" thumb="/images/indexsel.png" bind:contact="onContact"></wux-cell>
+    <wux-cell title="邀请好友" is-link open-type="share" thumb="/images/indexsel.png"></wux-cell>
+    <wux-cell title="我的订单" is-link url="/pages/orderlist/orderlist" open-type="navigateTo" thumb="/images/indexsel.png"></wux-cell>
+  </wux-cell-group>
+  <wux-cell-group wux-class="noborder" title="列表标题" label="">
+  <!-- <wux-wing-blank size="default">
+      <wux-card head="{{false}}" wux-class=""> -->
+  <view class="media-wrap" slot="body" hover-class="none" hover-stop-propagation="false">
+    <wux-media thumb="https://soure.chudianad.com/static/advert/iconUrl/201810251836509322.jpg" thumb-style="border-radius: 50%" title="小秒杀" label="时时秒杀，天天低价抢购">
+      <view class="btn-wrap center-right" slot hover-class="none" hover-stop-propagation="false" bind:tap="navigateToMini">
+        <view class="img-wrap" hover-class="none" hover-stop-propagation="false">
+          <image src="" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+          <text class="img-num">11</text>
+        </view>
+        <text class="">点击领取</text>
+      </view>
+    </wux-media>
+  </view>
+  <!-- </wux-card>
+    </wux-wing-blank> -->
+  </wux-cell-group>
+</view>

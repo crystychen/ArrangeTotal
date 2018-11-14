@@ -3,6 +3,8 @@
   "usingComponents": {
     "ui-card": "../../components/card/index",
     "ui-tab-bar": "../../components/tab-bar/index",
-    "ui-tab-bar-item": "../../components/tab-bar-item/index"
+    "ui-tab-bar-item": "../../components/tab-bar-item/index",
+    "wux-cell-group": "wux-weapp/cell-group",
+    "wux-cell": "wux-weapp/cell"
   }
 }

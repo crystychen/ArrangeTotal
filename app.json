@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/UI/index",
     "pages/my/my",
     "pages/orderlist/orderlist",
     "pages/order_detail/order_detail",
@@ -23,8 +24,8 @@
         "selectedIconPath": "images/indexsel.png"
       },
       {
-        "pagePath": "pages/orderlist/orderlist",
-        "text": "步友",
+        "pagePath": "pages/UI/index",
+        "text": "wux-UI",
         "iconPath": "images/stepF.png",
         "selectedIconPath": "images/stepFsel.png"
       },
@@ -35,5 +36,8 @@
         "selectedIconPath": "images/mysel.png"
       }
     ]
-  }
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wx9ddb22fc5fee2755"
+  ]
 }

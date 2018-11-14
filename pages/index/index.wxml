@@ -6,7 +6,7 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
     </block> -->
-    <ui-card title="{{userInfo.nickName}}" flex-dire="column" item-flex-dire="column" thumb="{{userInfo.avatarUrl}}">
+    <ui-card title="{{userInfo.nickName}}" thumb="{{userInfo.avatarUrl}}">
       <view slot="extra">
         <view class='row'>
           <image class="sm_icon" src='/images/mysel.png'></image>
@@ -34,20 +34,4 @@
   <!-- <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view> -->
-  <view >按钮Button</view>
-  <view class='btn-container'>
-    <button class='btn'>默认按钮</button>
-    <view class='btn border'>边框按钮</view>
-    <view class='btn active'>活跃按钮</view>
-    <view class='btn disabled'>不可用按钮</view>
-  </view>
-  <view class='btn-container horizontal'>
-    <button class='btn sm-btn active'>小按钮</button>
-    <view class='btn md-btn active'>中按钮</view>
-  </view>
-  <view class='btn-container vertical'>
-    <view class='btn md-btn active'>活跃按钮</view>
-    <view class='btn sm-btn disabled'>不可用按钮</view>
-  </view>
-
 </view>

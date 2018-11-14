@@ -5,6 +5,8 @@
 // const Base64 = require('js-base64').Base64
 import { Base64 } from 'js-base64'
 console.log(Base64)
+const package1 = require('wux-weapp')
+console.log(package1)
 import {
   postAjax
 } from '../../utils/ajax.js';

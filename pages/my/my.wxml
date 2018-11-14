@@ -1,4 +1,4 @@
-<!--index.wxml-->
+<!-- index.wxml -->
 <view class="container">
   <view class='user-infos-wrap'>
     <ui-card title="{{userInfo.nickName}}" flex-dire="column" item-flex-dire="column" thumb="{{userInfo.avatarUrl}}">
@@ -38,4 +38,9 @@
       </view>
     </ui-card>
   </view>
+  <!-- <wux-cell-group title="菜单列表"> -->
+    <wux-cell title="联系客服" is-link open-type="contact" thumb="/images/indexsel.png" bind:contact="onContact"></wux-cell>
+    <wux-cell title="邀请好友" is-link open-type="share" thumb="/images/indexsel.png"></wux-cell>
+    <wux-cell title="我的订单" is-link url="/pages/orderlist/orderlist" open-type="navigateTo" thumb="/images/indexsel.png"></wux-cell>
+  <!-- </wux-cell-group> -->
 </view>

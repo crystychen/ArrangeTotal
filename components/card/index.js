@@ -29,6 +29,14 @@ Component({
         foot: {
           type: Boolean,
           value: false
+        },
+        flexDire: {
+          type: String,
+          value: ''
+        },
+        itemFlexDire: {
+          type: String,
+          value: ''
         }
     }
 });
