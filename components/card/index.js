@@ -1,6 +1,5 @@
 Component({
-  externalClasses: ['i-class', 'flex-dire', 'item-flex-dire'],
-
+    externalClasses: ['i-class', 'flex-dire', 'item-flex-dire'],
     options: {
         multipleSlots: true
     },
@@ -23,20 +22,20 @@ Component({
             value: ''
         },
         bcgImg: {
-          type: String,
-          value: ''
+            type: String,
+            value: ''
         },
         foot: {
-          type: Boolean,
-          value: false
+            type: Boolean,
+            value: false
         },
         flexDire: {
-          type: String,
-          value: ''
+            type: String,
+            value: ''
         },
         itemFlexDire: {
-          type: String,
-          value: ''
+            type: String,
+            value: ''
         }
     }
 });

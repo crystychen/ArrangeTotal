@@ -1,76 +1,163 @@
-/* pages/UI/index.wxss */
-/* 列表媒体对象start */
-.media-wrap {
-  margin: 10rpx auto;
-  border-radius: 20rpx;
-  width: 90%;
-  box-shadow: 4rpx 4rpx 30rpx 20rpx rgb(233, 233, 233);
-}
-/* 媒体对象自定义内容 */
-.center-right {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.btn-wrap {
-  padding-right: 30rpx;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.img-wrap {
-  width: 80rpx;
-  height: 80rpx;
-  position: relative;
-}
-.img-num {
-  width: 100%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: block;
-  color: #ffffff;
-  text-align: center;
-}
-.img-wrap > image {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #ccc;
-  border-radius: 50%;
-}
-/* 列表媒体对象end */
-/* 卡片样式补充start */
-.num {
-  color: #cf9f73;
-  font-weight: bold;
-  padding: 0 8rpx;
-}
-/* 卡片内容自定义 */
-.num-row {
-  width: 100%;
-  margin-top: 40rpx;
-}
-
-.num-item {
-  width: 33%;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.num-item > text:first-child {
-  color: #333;
-  font-weight: bold;
-  font-size: 34rpx;
-}
-
-.num-item > text:last-child {
-  color: #c7c7cb;
-}
-.noborder {
-  border: none;
-}
-/* 卡片样式补充end */
+    /* pages/UI/index.wxss */
+    
+    .page {
+        background: #F3F3F3;
+    }
+    
+    .topRight {
+        top: 150rpx !important;
+    }
+    /* 列表媒体对象start */
+    
+    .media-wrap {
+        margin: 20rpx auto;
+        border-radius: 20rpx;
+        width: 90%;
+        box-shadow: 0rpx 0rpx 30rpx 10rpx rgb(233, 233, 233);
+    }
+    /* 媒体对象自定义内容 */
+    
+    .center-right {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .btn-wrap {
+        padding-right: 30rpx;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .img-wrap {
+        width: 80rpx;
+        height: 80rpx;
+        position: relative;
+    }
+    
+    .img-num {
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: block;
+        color: #ffffff;
+        text-align: center;
+    }
+    
+    .img-wrap>image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #ccc;
+        border-radius: 50%;
+    }
+    /* 列表媒体对象end */
+    /* 卡片样式补充start */
+    
+    .userinfos-wrap {
+        margin: 20rpx 0;
+    }
+    
+    .card-bgc {
+        background: #ffffff !important;
+    }
+    
+    .num {
+        color: #cf9f73;
+        font-weight: bold;
+        padding: 0 8rpx;
+    }
+    /* 卡片内容自定义 */
+    
+    .num-row {
+        width: 100%;
+        margin-top: 40rpx;
+    }
+    
+    .num-item {
+        width: 33%;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .num-item>text:first-child {
+        color: #333;
+        font-weight: bold;
+        font-size: 34rpx;
+    }
+    
+    .num-item>text:last-child {
+        color: #c7c7cb;
+    }
+    
+    .noborder {
+        border: none;
+        padding-bottom: 10rpx;
+    }
+    /* 卡片样式补充end */
+    /* 顶部导航start */
+    
+    .top-navigation {
+        width: 100%;
+        height: 120rpx;
+        position: fixed;
+        top: 0;
+        background: #cf9f73;
+        color: #ffffff;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .top-navigation .title {
+        text-align: center;
+        width: 100%;
+        color: #ffffff;
+        height: 120rpx;
+        line-height: 140rpx;
+        vertical-align: middle;
+        line-height: 140rpx;
+    }
+    /* 顶部导航end*/
+    /* 用户信息 */
+    
+    .userinfo {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10rpx 0;
+    }
+    /* 圆形头像要设置overflow: hidden;和border-radius: 50%;   */
+    
+    .userinfo-avatar {
+        width: 160rpx;
+        height: 160rpx;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    /* 底部导航 */
+    
+    .UI-icon {
+        height: 200rpx;
+        background: #fff;
+        border-top-left-radius: 20rpx;
+        border-top-right-radius: 20rpx;
+        position: relative;
+        width: 100rpx;
+        top: -30rpx;
+        z-index: 1;
+        padding: 10rpx 0;
+    }
+    
+    .UI-icon>image {
+        width: 80rpx;
+        height: 80rpx;
+        position: relative;
+        z-index: 1;
+    }

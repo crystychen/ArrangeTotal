@@ -1,43 +1,20 @@
 {
-  "pages": [
-    "pages/index/index",
-    "pages/UI/index",
-    "pages/my/my",
-    "pages/orderlist/orderlist",
-    "pages/order_detail/order_detail",
-    "pages/logs/logs"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
-  },
-  "tabBar": {
-    "color": "#DBDBDB",
-    "selectedColor": "#1BACE4",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "首页",
-        "iconPath": "images/index.png",
-        "selectedIconPath": "images/indexsel.png"
-      },
-      {
-        "pagePath": "pages/UI/index",
-        "text": "wux-UI",
-        "iconPath": "images/stepF.png",
-        "selectedIconPath": "images/stepFsel.png"
-      },
-      {
-        "pagePath": "pages/my/my",
-        "text": "我的",
-        "iconPath": "images/my.png",
-        "selectedIconPath": "images/mysel.png"
-      }
+    "pages": [
+        "pages/UI/index",
+        "pages/index/index",
+        "pages/my/my",
+        "pages/orderlist/orderlist",
+        "pages/order_detail/order_detail",
+        "pages/logs/logs"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "WeChat",
+        "navigationBarTextStyle": "black",
+        "navigationStyle": "custom"
+    },
+    "navigateToMiniProgramAppIdList": [
+        "wx9ddb22fc5fee2755"
     ]
-  },
-  "navigateToMiniProgramAppIdList": [
-    "wx9ddb22fc5fee2755"
-  ]
 }

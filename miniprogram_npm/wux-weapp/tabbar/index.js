@@ -52,6 +52,7 @@ Component({
                     })
 
                     elements.forEach((element, index) => {
+                        console.log(element)
                         const key = element.data.key || String(index)
                         const current = key === activeKey
 

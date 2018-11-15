@@ -1,11 +1,19 @@
 <!-- index.wxml -->
-<view class="container">
+<view class="page container">
+  <!-- 自定义顶部导航 -->
+  <view class="top-navigation" hover-class="none" hover-stop-propagation="false">
+    <text class="title" selectable="false" space="false" decode="false">我的</text>
+  </view>
   <view class='user-infos-wrap'>
     <ui-card title="{{userInfo.nickName}}" flex-dire="column" item-flex-dire="column" thumb="{{userInfo.avatarUrl}}">
       <view slot="extra">
         <view class='row'>
           <image class="sm_icon" src='/images/mysel.png'></image>
-          <text class='extra-infos'>已有<text class="num">8</text>张书签</text>
+          <view class='extra-infos'>
+            <text>已有</text>
+            <text class="num">8</text>
+            <text>张书签</text>
+          </view>
         </view>
       </view>
       <view slot="content">
@@ -39,8 +47,34 @@
     </ui-card>
   </view>
   <!-- <wux-cell-group title="菜单列表"> -->
-    <wux-cell title="联系客服" is-link open-type="contact" thumb="/images/indexsel.png" bind:contact="onContact"></wux-cell>
-    <wux-cell title="邀请好友" is-link open-type="share" thumb="/images/indexsel.png"></wux-cell>
-    <wux-cell title="我的订单" is-link url="/pages/orderlist/orderlist" open-type="navigateTo" thumb="/images/indexsel.png"></wux-cell>
+  <wux-cell title="联系客服" is-link open-type="contact" thumb="/images/indexsel.png" bind:contact="onContact"></wux-cell>
+  <wux-cell title="邀请好友" is-link open-type="share" thumb="/images/indexsel.png"></wux-cell>
+  <wux-cell title="我的订单" is-link url="/pages/orderlist/orderlist" open-type="navigateTo" thumb="/images/indexsel.png"></wux-cell>
   <!-- </wux-cell-group> -->
+  <!-- tabbar标签栏 -->
+  <wux-tabbar controlled current="{{ current }}" bindchange="onTabbarChange" position="bottom">
+    <wux-tabbar-item title="首页" key="index">
+      <wux-badge count="1" slot="icon-on">
+        <wux-icon wux-class="icon" type="ios-home" size="22" />
+      </wux-badge>
+      <wux-badge count="1" slot="icon-off">
+        <wux-icon wux-class="icon" color="#cf9f73" type="ios-home" size="22" />
+      </wux-badge>
+    </wux-tabbar-item>
+    <wux-tabbar-item key="UI">
+      <wux-icon wux-class="icon" type="ios-image" size="22" slot="icon-on" />
+      <view class="UI-icon" slot="icon-off" hover-class="none" hover-stop-propagation="false">
+        <image class="" src="/images/ui-on.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+      </view>
+      <!-- <wux-icon wux-class="icon" type="ios-image" color="#cf9f73" size="22" slot="icon-off" /> -->
+    </wux-tabbar-item>
+    <wux-tabbar-item title="动态" key="news">
+      <wux-badge dot slot="icon-on">
+        <wux-icon wux-class="icon" type="ios-person" size="22" />
+      </wux-badge>
+      <wux-badge dot slot="icon-off">
+        <wux-icon wux-class="icon" color="#cf9f73" type="ios-person" size="22" />
+      </wux-badge>
+    </wux-tabbar-item>
+  </wux-tabbar>
 </view>

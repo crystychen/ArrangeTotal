@@ -10,6 +10,10 @@
     "wux-card": "wux-weapp/card/",
     "wux-wing-blank": "wux-weapp/wing-blank",
     "wux-media": "wux-weapp/media",
-    "wux-floating-button": "wux-weapp/floating-button"
+    "wux-floating-button": "wux-weapp/floating-button",
+    "wux-icon": "wux-weapp/icon",
+    "wux-badge": "wux-weapp/badge",
+    "wux-tabbar": "wux-weapp/tabbar",
+    "wux-tabbar-item": "wux-weapp/tabbar-item"
   }
 }

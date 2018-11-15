@@ -1,5 +1,9 @@
-<!--index.wxml-->
-<view class="container">
+<!-- index.wxml -->
+<view class="container page">
+  <!-- 自定义顶部导航 -->
+  <view class="top-navigation" hover-class="none" hover-stop-propagation="false">
+    <text class="title" selectable="false" space="false" decode="false">首页</text>
+  </view>
   <view class="userinfo">
     <!-- <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
@@ -10,7 +14,11 @@
       <view slot="extra">
         <view class='row'>
           <image class="sm_icon" src='/images/mysel.png'></image>
-          <text class='extra-infos'>已有<text class="num">8</text>张书签</text>
+          <view class='extra-infos'>
+            <text>已有</text>
+            <text class="num">8</text>
+            <text>张书签</text>
+          </view>
         </view>
       </view>
       <view slot="content">
@@ -34,4 +42,29 @@
   <!-- <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view> -->
+  <wux-tabbar controlled current="{{ current }}" bindchange="onTabbarChange" position="bottom">
+    <wux-tabbar-item title="首页" key="index">
+      <wux-badge count="1" slot="icon-on">
+        <wux-icon wux-class="icon" type="ios-home" size="22" />
+      </wux-badge>
+      <wux-badge count="1" slot="icon-off">
+        <wux-icon wux-class="icon" color="#cf9f73" type="ios-home" size="22" />
+      </wux-badge>
+    </wux-tabbar-item>
+    <wux-tabbar-item key="UI">
+      <wux-icon wux-class="icon" type="ios-image" size="22" slot="icon-on" />
+      <view class="UI-icon" slot="icon-off" hover-class="none" hover-stop-propagation="false">
+        <image class="" src="/images/ui-on.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+      </view>
+      <!-- <wux-icon wux-class="icon" type="ios-image" color="#cf9f73" size="22" slot="icon-off" /> -->
+    </wux-tabbar-item>
+    <wux-tabbar-item title="动态" key="news">
+      <wux-badge dot slot="icon-on">
+        <wux-icon wux-class="icon" type="ios-person" size="22" />
+      </wux-badge>
+      <wux-badge dot slot="icon-off">
+        <wux-icon wux-class="icon" color="#cf9f73" type="ios-person" size="22" />
+      </wux-badge>
+    </wux-tabbar-item>
+  </wux-tabbar>
 </view>

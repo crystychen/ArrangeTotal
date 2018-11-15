@@ -1,9 +1,13 @@
 {
-  "navigationBarTitleText": "UI",
-  "usingComponents": {
-    "ui-card": "../../components/card/index",
-    "ui-tab-bar": "../../components/tab-bar/index",
-    "ui-tab-bar-item": "../../components/tab-bar-item/index",
-    "wux-button": "wux-weapp/button"
-  }
+    "navigationBarTitleText": "UI",
+    "usingComponents": {
+        "ui-card": "../../components/card/index",
+        "ui-tab-bar": "../../components/tab-bar/index",
+        "ui-tab-bar-item": "../../components/tab-bar-item/index",
+        "wux-button": "wux-weapp/button",
+        "wux-icon": "wux-weapp/icon",
+        "wux-badge": "wux-weapp/badge",
+        "wux-tabbar": "wux-weapp/tabbar",
+        "wux-tabbar-item": "wux-weapp/tabbar-item"
+    }
 }

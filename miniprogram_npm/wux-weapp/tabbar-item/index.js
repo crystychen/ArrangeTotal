@@ -41,7 +41,7 @@ Component({
         onTap() {
             const { index, disabled } = this.data
             const parent = this.getRelationNodes('../tabbar/index')[0]
-
+            console.log(this.data)
             if (disabled || !parent) {
                 return false
             }

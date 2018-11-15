@@ -1,16 +1,15 @@
 Component({
     externalClasses: ['i-class'],
-
     relations: {
         '../tab-bar-item/index': {
             type: 'child',
-            linked () {
+            linked() {
                 this.changeCurrent();
             },
-            linkChanged () {
+            linkChanged() {
                 this.changeCurrent();
             },
-            unlinked () {
+            unlinked() {
                 this.changeCurrent();
             }
         }
@@ -37,7 +36,7 @@ Component({
     },
 
     methods: {
-        changeCurrent (val = this.data.current) {
+        changeCurrent(val = this.data.current) {
             let items = this.getRelationNodes('../tab-bar-item/index');
             const len = items.length;
 
@@ -55,10 +54,10 @@ Component({
                 });
             }
         },
-        emitEvent (key) {
+        emitEvent(key) {
             this.triggerEvent('change', { key });
         },
-        handleClickItem (e) {
+        handleClickItem(e) {
             const key = e.currentTarget.dataset.key;
             this.emitEvent(key);
         }
