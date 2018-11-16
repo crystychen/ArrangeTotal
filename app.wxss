@@ -132,10 +132,25 @@ button {
     margin: 20rpx auto;
 }
 
+
+/* 排列 */
+
 .row {
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+.row.between {
+    justify-content: space-between;
+}
+
+.text {
+    /* text-align: center;
+    vertical-align: middle;
+    line-height: 100%;
+    height: 100%; */
+    padding: 0 10rpx;
 }
 
 .page {

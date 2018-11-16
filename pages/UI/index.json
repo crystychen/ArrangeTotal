@@ -1,19 +1,21 @@
 {
-  "navigationBarTitleText": "Wux-UI",
-  "usingComponents": {
-    "ui-card": "../../components/card/index",
-    "ui-tab-bar": "../../components/tab-bar/index",
-    "ui-tab-bar-item": "../../components/tab-bar-item/index",
-    "wux-button": "wux-weapp/button",
-    "wux-cell-group": "wux-weapp/cell-group",
-    "wux-cell": "wux-weapp/cell",
-    "wux-card": "wux-weapp/card/",
-    "wux-wing-blank": "wux-weapp/wing-blank",
-    "wux-media": "wux-weapp/media",
-    "wux-floating-button": "wux-weapp/floating-button",
-    "wux-icon": "wux-weapp/icon",
-    "wux-badge": "wux-weapp/badge",
-    "wux-tabbar": "wux-weapp/tabbar",
-    "wux-tabbar-item": "wux-weapp/tabbar-item"
-  }
+    "navigationBarTitleText": "Wux-UI",
+    "usingComponents": {
+        "wux-spin": "wux-weapp/spin",
+        "wux-backdrop": "wux-weapp/backdrop",
+        "ui-card": "../../components/card/index",
+        "ui-tab-bar": "../../components/tab-bar/index",
+        "ui-tab-bar-item": "../../components/tab-bar-item/index",
+        "wux-button": "wux-weapp/button",
+        "wux-cell-group": "wux-weapp/cell-group",
+        "wux-cell": "wux-weapp/cell",
+        "wux-card": "wux-weapp/card/",
+        "wux-wing-blank": "wux-weapp/wing-blank",
+        "wux-media": "wux-weapp/media",
+        "wux-floating-button": "wux-weapp/floating-button",
+        "wux-icon": "wux-weapp/icon",
+        "wux-badge": "wux-weapp/badge",
+        "wux-tabbar": "wux-weapp/tabbar",
+        "wux-tabbar-item": "wux-weapp/tabbar-item"
+    }
 }

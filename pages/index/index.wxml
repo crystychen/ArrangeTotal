@@ -1,15 +1,12 @@
 <!-- index.wxml -->
+<!-- 背景幕 -->
+<wux-backdrop id="wux-backdrop" />
 <view class="container page">
   <!-- 自定义顶部导航 -->
   <view class="top-navigation" hover-class="none" hover-stop-propagation="false">
     <text class="title" selectable="false" space="false" decode="false">首页</text>
   </view>
-  <view class="userinfo">
-    <!-- <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-    </block> -->
+  <!-- <view class="userinfo">
     <ui-card title="{{userInfo.nickName}}" thumb="{{userInfo.avatarUrl}}">
       <view slot="extra">
         <view class='row'>
@@ -38,16 +35,120 @@
         </view>
       </view>
     </ui-card>
-  </view>
-  <!-- <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
   </view> -->
+  <wux-spin nested size="large" spinning="{{ spinning }}" tip="加载中..."></wux-spin>
+  <!-- 拖动区域 -->
+  <!-- <movable-area>
+      <movable-view direction="all" out-of-bounds>text</movable-view>
+    </movable-area> -->
+  <view class="" hover-class="none" hover-stop-propagation="false">
+    <!-- <view class="card-wrap" hover-class="none" hover-stop-propagation="false">
+      <view class="card-head" hover-class="none" hover-stop-propagation="false">
+        心怀天下的你，快来帮他解决大难题吧！
+      </view>
+      <view class="card-content" hover-class="none" hover-stop-propagation="false">
+        <view class="row between content-head">
+          <view class="row">
+            <image class="md_icon" src="{{userInfo.avatarUrl}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+            <view class="text">小精灵</view>
+          </view>
+          <view class="share-btn">
+            <image class="share-btn" src="/images/share.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+            <button open-type="share"></button>
+          </view>
+        </view>
+        <view class="content-body" hover-class="none" hover-stop-propagation="false">
+          <view class="infos" hover-class="none" hover-stop-propagation="false">
+            马赛克费劲儿耳环饿了反光杯热心肠不温不个人不会的发
+          </view>
+        </view>
+      </view>
+      <view class="card-footer" hover-class="none" hover-stop-propagation="false"></view>
+    </view> -->
+    <movable-area style="width: {{windowWidth}}px;height: {{windowHeight}}px">
+      <movable-view class="movable-wrap" direction="all" x="{{x}}" y="{{y}}" damping="1000" out-of-bounds bindchange="moveChange">
+        <view class="card-wrap" hover-class="none" hover-stop-propagation="false">
+          <view class="card-head" hover-class="none" hover-stop-propagation="false">
+            心怀天下的你，快来帮他解决大难题吧！
+          </view>
+          <view class="card-content" hover-class="none" hover-stop-propagation="false">
+            <view class="row between content-head">
+              <view class="row">
+                <image class="md_icon" src="{{userInfo.avatarUrl}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+                <view class="text">小精灵</view>
+              </view>
+              <view class="share-btn">
+                <image class="share-btn" src="/images/share.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+                <button open-type="share"></button>
+              </view>
+            </view>
+            <view class="content-body" hover-class="none" hover-stop-propagation="false">
+              <view class="infos" hover-class="none" hover-stop-propagation="false">
+                马赛克费劲儿耳环饿了反光杯热心肠不温不个人不会的发
+              </view>
+            </view>
+          </view>
+          <view class="card-footer" hover-class="none" hover-stop-propagation="false"></view>
+        </view>
+      </movable-view>
+      <movable-view class="movable-wrap" direction="all" x="{{x}}" y="{{y}}" damping="1000" out-of-bounds bindchange="moveChange">
+        <view class="card-wrap" hover-class="none" hover-stop-propagation="false">
+          <view class="card-head" hover-class="none" hover-stop-propagation="false">
+            心怀天下的你，快来帮他解决大难题吧！
+          </view>
+          <view class="card-content" hover-class="none" hover-stop-propagation="false">
+            <view class="row between content-head">
+              <view class="row">
+                <image class="md_icon" src="{{userInfo.avatarUrl}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+                <view class="text">小精灵</view>
+              </view>
+              <view class="share-btn">
+                <image class="share-btn" src="/images/share.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+                <button open-type="share"></button>
+              </view>
+            </view>
+            <view class="content-body" hover-class="none" hover-stop-propagation="false">
+              <view class="infos" hover-class="none" hover-stop-propagation="false">
+                马赛克费劲儿耳环饿了反光杯热心肠不温不个人不会的发
+              </view>
+            </view>
+          </view>
+          <view class="card-footer" hover-class="none" hover-stop-propagation="false"></view>
+        </view>
+      </movable-view>
+      <view class="shadow-border" hover-class="none" hover-stop-propagation="false"></view>
+    </movable-area>
+    <!-- <view class="card-wrap" hover-class="none" hover-stop-propagation="false">
+      <view class="card-head" hover-class="none" hover-stop-propagation="false">
+        心怀天下的你，快来帮他解决大难题吧！
+      </view>
+      <view class="card-content" hover-class="none" hover-stop-propagation="false">
+        <view class="row between content-head">
+          <view class="row">
+            <image class="md_icon" src="{{userInfo.avatarUrl}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+            <view class="text">小精灵</view>
+          </view>
+          <view class="share-btn">
+            <image class="share-btn" src="/images/share.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+            <button open-type="share"></button>
+          </view>
+        </view>
+        <view class="content-body" hover-class="none" hover-stop-propagation="false">
+          <view class="infos" hover-class="none" hover-stop-propagation="false">
+            马赛克费劲儿耳环饿了反光杯热心肠不温不个人不会的发
+          </view>
+        </view>
+      </view>
+      <view class="card-footer" hover-class="none" hover-stop-propagation="false"></view>
+    </view> -->
+  </view>
+  <!-- 底部导航栏 -->
   <wux-tabbar controlled current="{{ current }}" bindchange="onTabbarChange" position="bottom">
     <wux-tabbar-item title="首页" key="index">
-      <wux-badge count="1" slot="icon-on">
+      <wux-badge count="" slot="icon-on">
         <wux-icon wux-class="icon" type="ios-home" size="22" />
       </wux-badge>
-      <wux-badge count="1" slot="icon-off">
+      <wux-badge count="" slot="icon-off">
         <wux-icon wux-class="icon" color="#cf9f73" type="ios-home" size="22" />
       </wux-badge>
     </wux-tabbar-item>

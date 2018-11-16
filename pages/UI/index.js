@@ -1,4 +1,5 @@
 // pages/UI/index.js
+import { $wuxBackdrop } from 'wux-weapp'
 const app = getApp();
 
 Page({
@@ -28,8 +29,8 @@ Page({
             },
         ],
         position: 'topRight',
-        current: 'UI'
-
+        current: 'UI',
+        spinning: true // 加载中
     },
 
     /**
@@ -37,13 +38,21 @@ Page({
      */
     onLoad: function(options) {
         let that = this
-            // app.loginGetUserInfo(function (uinfo) {
+        that.$wuxBackdrop = $wuxBackdrop()
+        that.$wuxBackdrop.retain()
 
-        //   that.setData({
-        //     userInfo: uinfo
-        //   })
+        app.loginGetUserInfo(function(uinfo) {
 
-        // })
+            that.setData({
+                userInfo: uinfo
+            })
+            setTimeout(function() {
+                that.setData({
+                    spinning: false
+                })
+                that.$wuxBackdrop.release()
+            }, 500)
+        })
     },
 
     /**

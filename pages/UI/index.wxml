@@ -1,4 +1,6 @@
 <!-- pages/UI/index.wxml -->
+<!-- 背景幕 -->
+<wux-backdrop id="wux-backdrop" />
 <!-- 浮动按钮 -->
 <wux-floating-button wux-class="topRight" position="{{ position }}" buttons="{{ buttons }}" bind:change="onChange" bind:click="onClick" bind:contact="onContact" />
 <view class="page" hover-class="none" hover-stop-propagation="false">
@@ -6,12 +8,6 @@
   <view class="top-navigation" hover-class="none" hover-stop-propagation="false">
     <text class="title" selectable="false" space="false" decode="false">UI组件</text>
   </view>
-  <!-- <view class="userinfo">
-    <view class="userinfo-avatar">
-      <open-data type="userAvatarUrl" class="userinfo-avatar" mode="cover"></open-data>
-    </view>
-    <open-data type="userNickName" lang="zh_CN"></open-data>    
-  </view> -->
   <view class="userinfos-wrap" hover-class="none" hover-stop-propagation="false">
     <ui-card i-class="card-bgc" title=" " flex-dire="column" item-flex-dire="column" thumb="">
       <view slot="extra">
@@ -48,6 +44,8 @@
       </view>
     </ui-card>
   </view>
+  <wux-spin nested size="large" spinning="{{ spinning }}" tip="加载中...">
+ </wux-spin>
   <wux-cell-group wux-class="card-bgc" title="菜单列表">
     <wux-cell title="联系客服" is-link open-type="contact" thumb="/images/indexsel.png" bind:contact="onContact"></wux-cell>
     <wux-cell title="邀请好友" is-link open-type="share" thumb="/images/indexsel.png"></wux-cell>
