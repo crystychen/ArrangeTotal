@@ -1,155 +1,168 @@
-.container{
-  overflow: hidden;
+.page {
+    padding-top: 140rpx;
 }
+
+.container {
+    overflow: hidden;
+}
+
 .goods {
-  padding: 30rpx;
+    padding: 30rpx;
 }
 
 .title {
-  height: 90rpx;
-  line-height: 90rpx;
-  width: 100%;
-  padding: 0 30rpx;
-  font-weight: bold;
-  background: #f2f2f2;
+    height: 90rpx;
+    line-height: 90rpx;
+    width: 100%;
+    padding: 0 30rpx;
+    font-weight: bold;
+    background: #f2f2f2;
 }
 
 .item-body {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  box-sizing: border-box;
-  background-color: #fff;
-  padding: 30rpx;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    background-color: #fff;
+    padding: 30rpx;
 }
 
 .item-body .img {
-  width: 130rpx;
-  height: 130rpx;
-  background: #ccc;
+    width: 130rpx;
+    height: 130rpx;
+    background: #ccc;
 }
+
 
 /*右边信息样式*/
 
 .info {
-  width: 500rpx;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-  margin-left: 20rpx;
+    width: 500rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    margin-left: 20rpx;
 }
 
 .name {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 .shipping-detail {
-  position: relative;
+    position: relative;
 }
 
 .shipping-detail .info {
-  margin: 0;
-  height: 130rpx;
+    margin: 0;
+    height: 130rpx;
 }
 
 .shipping-detail .name {
-  font-size: 30rpx;
-  font-weight: bold;
+    font-size: 30rpx;
+    font-weight: bold;
 }
 
 .receive-detail text {
-  color: #7f7f7f;
-  font-size: 26rpx;
+    color: #7f7f7f;
+    font-size: 26rpx;
 }
 
 .shippingCode text {
-  color: #979797;
-  font-size: 26rpx;
+    color: #979797;
+    font-size: 26rpx;
 }
 
 .copy_btn {
-  background: #000;
-  color: #fff;
-  width: 120rpx;
-  height: 50rpx;
-  line-height: 50rpx;
-  text-align: center;
-  padding: 0 10rpx;
-  position: absolute;
-  top: 50%;
-  right: 20rpx;
-  transform: translateY(-50%);
+    background: #000;
+    color: #fff;
+    width: 120rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    text-align: center;
+    padding: 0 10rpx;
+    position: absolute;
+    top: 50%;
+    right: 20rpx;
+    transform: translateY(-50%);
 }
 
 .orderPrice {
-  margin-top: 15rpx;
-  letter-spacing: 1rpx;
-  color: #787878;
-  font-size: 28rpx;
+    margin-top: 15rpx;
+    letter-spacing: 1rpx;
+    color: #787878;
+    font-size: 28rpx;
 }
+
 .orderPrice::after {
-  content: "+"
+    content: "+"
 }
+
 .orderPrice:last-child::after {
-  content: ""
+    content: ""
 }
+
 .pricenum {
-  font-size: 32rpx;
-  color: #23b7e0;  
+    font-size: 32rpx;
+    color: #23b7e0;
 }
 
 .status {
-  position: absolute;
-  right: 0;
-  bottom: 0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
+
 
 /* 查看物流界面 */
 
 .shipping.row .info {
-  margin: 0 20rpx;
+    margin: 0 20rpx;
 }
 
+
 /* 操作按钮 */
+
 .pay_fixed {
-  position: fixed;
-  display: flex;
-  bottom: 0;
-  align-items: center;
-  justify-content: flex-end;
-  width: 100%;
-  background: #fff;
-  text-align: right;
-  background: #fff;
-  padding: 14rpx 0;
+    position: fixed;
+    display: flex;
+    bottom: 0;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    background: #fff;
+    text-align: right;
+    background: #fff;
+    padding: 14rpx 0;
 }
 
 .btn {
-  width: 160rpx;
-  height: 40rpx;
-  line-height: 40rpx;
-  background-color: #fff;
-  color: #666;
-  font-size: 30rpx;
-  display: inline-block;
-  align-items: center;
-  justify-content: center;
-  border-radius: 6rpx;
-  padding: 8rpx 10rpx;
-  margin-right: 20rpx;
-  text-align: center;
-  /* border: 1rpx solid #999; */
-  box-sizing: content-box;
+    width: 160rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    background-color: #fff;
+    color: #666;
+    font-size: 30rpx;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6rpx;
+    padding: 8rpx 10rpx;
+    margin-right: 20rpx;
+    text-align: center;
+    /* border: 1rpx solid #999; */
+    box-sizing: content-box;
 }
 
 .active-btn {
-   background: linear-gradient(to right, #23BAE0, #31DCDF);
-  color: #fff;
-  /* border: 1rpx solid #fe6e00; */
+    background: linear-gradient(to right, #23BAE0, #31DCDF);
+    color: #fff;
+    /* border: 1rpx solid #fe6e00; */
 }
-.xuni{
-  position: absolute;
-  right: 200rpx;
-  bottom: 10px;
+
+.xuni {
+    position: absolute;
+    right: 200rpx;
+    bottom: 10px;
 }
