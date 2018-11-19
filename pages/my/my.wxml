@@ -1,9 +1,7 @@
 <!-- index.wxml -->
+<!-- 自定义顶部导航 -->
+<navigation fixed title="我的" color="#ffffff" i-class="top-navigation"></navigation>
 <view class="page container">
-  <!-- 自定义顶部导航 -->
-  <view class="top-navigation" hover-class="none" hover-stop-propagation="false">
-    <text class="title" selectable="false" space="false" decode="false">我的</text>
-  </view>
   <view class='user-infos-wrap'>
     <ui-card title="{{userInfo.nickName}}" flex-dire="column" item-flex-dire="column" thumb="{{userInfo.avatarUrl}}">
       <view slot="extra">

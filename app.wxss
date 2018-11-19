@@ -152,8 +152,3 @@ button {
     height: 100%; */
     padding: 0 10rpx;
 }
-
-.page {
-    padding-top: 120rpx;
-    padding-bottom: 92rpx;
-}

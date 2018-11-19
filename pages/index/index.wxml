@@ -1,11 +1,9 @@
 <!-- index.wxml -->
 <!-- 背景幕 -->
 <wux-backdrop id="wux-backdrop" />
+<!-- 自定义顶部导航 -->
+<navigation fixed title="首页" color="#ffffff" i-class="top-navigation"></navigation>
 <view class="container page">
-  <!-- 自定义顶部导航 -->
-  <view class="top-navigation" hover-class="none" hover-stop-propagation="false">
-    <text class="title" selectable="false" space="false" decode="false">首页</text>
-  </view>
   <!-- <view class="userinfo">
     <ui-card title="{{userInfo.nickName}}" thumb="{{userInfo.avatarUrl}}">
       <view slot="extra">
@@ -66,10 +64,10 @@
       <view class="card-footer" hover-class="none" hover-stop-propagation="false"></view>
     </view> -->
     <movable-area style="width: {{windowWidth}}px;height: {{windowHeight}}px">
-      <movable-view class="movable-wrap" direction="all" x="{{x}}" y="{{y}}" damping="1000" out-of-bounds bindchange="moveChange">
+      <movable-view class="movable-wrap" style="z-index: {{zindex1}}" direction="all" x="{{x}}" y="{{y}}" damping="1000" out-of-bounds bindchange="moveChange">
         <view class="card-wrap" hover-class="none" hover-stop-propagation="false">
           <view class="card-head" hover-class="none" hover-stop-propagation="false">
-            心怀天下的你，快来帮他解决大难题吧！
+            心怀天下的你，快来帮他解决大难题吧1！
           </view>
           <view class="card-content" hover-class="none" hover-stop-propagation="false">
             <view class="row between content-head">
@@ -91,10 +89,10 @@
           <view class="card-footer" hover-class="none" hover-stop-propagation="false"></view>
         </view>
       </movable-view>
-      <movable-view class="movable-wrap" direction="all" x="{{x}}" y="{{y}}" damping="1000" out-of-bounds bindchange="moveChange">
+      <movable-view class="movable-wrap" style="z-index: {{zindex2}}" direction="all" x="{{x}}" y="{{y}}" damping="1000" out-of-bounds bindchange="moveChange">
         <view class="card-wrap" hover-class="none" hover-stop-propagation="false">
           <view class="card-head" hover-class="none" hover-stop-propagation="false">
-            心怀天下的你，快来帮他解决大难题吧！
+            心怀天下的你，快来帮他解决大难题吧2！
           </view>
           <view class="card-content" hover-class="none" hover-stop-propagation="false">
             <view class="row between content-head">

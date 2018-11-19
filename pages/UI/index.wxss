@@ -2,6 +2,8 @@
     
     .page {
         background: #F3F3F3;
+        padding-top: 10rpx;
+        padding-bottom: 92rpx;
     }
     
     .topRight {
@@ -100,31 +102,6 @@
         padding-bottom: 10rpx;
     }
     /* 卡片样式补充end */
-    /* 顶部导航start */
-    
-    .top-navigation {
-        width: 100%;
-        height: 120rpx;
-        position: fixed;
-        top: 0;
-        background: #cf9f73;
-        color: #ffffff;
-        align-items: center;
-        display: flex;
-        flex-direction: row;
-        z-index: 1;
-    }
-    
-    .top-navigation .title {
-        text-align: center;
-        width: 100%;
-        color: #ffffff;
-        height: 120rpx;
-        line-height: 140rpx;
-        vertical-align: middle;
-        line-height: 140rpx;
-    }
-    /* 顶部导航end*/
     /* 用户信息 */
     
     .userinfo {

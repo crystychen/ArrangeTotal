@@ -17,7 +17,9 @@ const app = getApp() //获取应用实例
 Page({
     data: {
         current: "index",
-        spinning: true
+        spinning: true,
+        zindex1: 1,
+        zindex2: 2
     },
     onLoad: function() {
         let that = this
@@ -75,9 +77,12 @@ Page({
 
         }
         if (e.detail.source == "out-of-bounds") {
+            let { zindex1, zindex2 } = this.data
             this.setData({
                 x: 0,
-                y: 0
+                y: 0,
+                zindex1: zindex2,
+                zindex2: zindex1
             })
         }
     }

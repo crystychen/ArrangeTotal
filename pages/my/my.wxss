@@ -1,28 +1,15 @@
 /**my.wxss**/
 
+.page {
+    padding-top: 140rpx;
+    padding-bottom: 92rpx;
+}
+
 
 /* 顶部导航start */
 
 .top-navigation {
-    width: 100%;
-    height: 120rpx;
-    position: fixed;
-    top: 0;
-    background: #cf9f73;
-    color: #ffffff;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-}
-
-.top-navigation .title {
-    text-align: center;
-    width: 100%;
-    color: #ffffff;
-    height: 120rpx;
-    line-height: 140rpx;
-    vertical-align: middle;
-    line-height: 140rpx;
+    background: #cf9f73 !important;
 }
 
 

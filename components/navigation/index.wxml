@@ -1,0 +1,6 @@
+<view class="i-class top-navigation {{ fixed ? 'navigation-fixed' : '' }}">
+  <slot></slot>
+  <view wx:if="{{hasback}}" catchtap="NavigateBack" class="back" hover-class="none" hover-stop-propagation="false">
+  </view>
+  <text class="title" style="color: {{color}}">{{title}}</text>
+</view>

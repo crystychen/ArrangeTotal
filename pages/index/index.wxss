@@ -3,6 +3,7 @@
 .page {
     background: #F3F3F3;
     padding: 0;
+    padding-top: 140rpx;
 }
 
 
@@ -11,24 +12,7 @@
 .top-navigation {
     width: 100%;
     height: 120rpx;
-    position: fixed;
-    top: 0;
-    background: #cf9f73;
-    color: #ffffff;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    z-index: 1;
-}
-
-.top-navigation .title {
-    text-align: center;
-    width: 100%;
-    color: #ffffff;
-    height: 90rpx;
-    line-height: 140rpx;
-    vertical-align: middle;
-    line-height: 140rpx;
+    background: #cf9f73 !important;
 }
 
 
@@ -117,7 +101,8 @@ movable-area {
     position: absolute;
     height: 940rpx;
     z-index: 1;
-    top: 160rpx;
+    /* top: 160rpx; */
+    top: 0;
     left: 0
 }
 
@@ -195,7 +180,7 @@ movable-area {
     height: 60rpx;
     background: #fff;
     position: absolute;
-    top: 1050rpx;
+    top: 896rpx;
     left: 50%;
     transform: translateX(-50%);
     z-index: 0;
