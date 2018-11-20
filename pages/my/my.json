@@ -10,6 +10,7 @@
         "wux-badge": "wux-weapp/badge",
         "wux-tabbar": "wux-weapp/tabbar",
         "wux-tabbar-item": "wux-weapp/tabbar-item",
-        "navigation": "../../components/navigation/index"
+        "navigation": "../../components/navigation/index",
+        "wux-cascader": "wux-weapp/cascader"
     }
 }

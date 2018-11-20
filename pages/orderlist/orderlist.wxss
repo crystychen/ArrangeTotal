@@ -2,7 +2,7 @@
 
 @import '../../weui.wxss';
 .page {
-    padding-top: 140rpx;
+    padding-top: 132rpx;
 }
 
 .contanier {
@@ -22,7 +22,7 @@ view {
 
 /* tab顶部导航 */
 
-.top-tab {
+/* .top-tab {
     z-index: 1;
     top: 140rpx;
     position: fixed;
@@ -68,14 +68,30 @@ view {
 
 .weui-navbar__item.weui-bar__item_on .weui-navbar__title {
     color: #23b7e0;
-}
+} */
 
+.bordered:before {
+	content: " ";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	height: 2rpx;
+	border-bottom: 2rpx solid #D9D9D9;
+	color: #D9D9D9;
+	transform-origin: 0 100%;
+	transform: scaleY(0.5);
+}
+.bordered {
+  position: fixed !important;
+  z-index: 2;
+}
 
 /* tab顶部导航end */
 
 .content {
     padding-top: 100rpx;
-    margin-top: 20rpx;
+    margin-top: 20rpx; 
     overflow-x: hidden;
 }
 
@@ -99,7 +115,7 @@ view {
     background: #f5f5f5;
     margin-top: 20rpx;
     color: #333;
-    background: #fff;
+    background: red;
 }
 
 .item-body {

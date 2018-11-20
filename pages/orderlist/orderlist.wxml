@@ -6,7 +6,7 @@
     </view> -->
 </navigation>
 <view class="contanier page">
-  <view class="top-tab weui-tab">
+  <!-- <view class="top-tab weui-tab">
     <view class='weui-navbar'>
       <block wx:for="{{navTab}}" wx:key="{{index}}">
         <view class="top-bar-item weui-navbar__item {{currentNavtab==item.state ? 'weui-bar__item_on' : ''}}" data-state="{{item.state}}" data-postState="{{item.poststate}}" bindtap="switchTab">
@@ -17,66 +17,67 @@
         <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
       </view>
     </view>
-  </view>
-  <view class='content'>
-    <!--列表list组件-->
-    <scroll-view class="scrollview-list" scroll-y="true" style="height:{{scrollHeight}}px" bindscroll="scroll" bindscrolltolower="bindscrolltolower" scroll-top="{{scrollTop}}">
-      <view class="list" wx:for="{{orderInfos}}" wx:key="{{index}}" style=''>
-        <view bindtap='detailOrder' data-orderId='{{item[1]}}'>
-          <view class="item-headerview">
-            <view class="headerview-wrap">
-              <text class='ordercode'>订单号 : {{item[1]}}</text>
-              <view class="ordertime">{{item[3]}}</view>
+  </view> -->
+  <wux-tabs wux-class="bordered" theme="energized" controlled current="{{ key }}" bindchange="onTabsChange">
+      <block wx:for="{{ navTab }}" wx:key="key">
+          <wux-tab key="{{ item.key }}" title="{{ item.tabName }}"></wux-tab>
+      </block>
+  </wux-tabs>
+  <swiper current="{{ index }}" bindchange="onSwiperChange" style="height:{{scrollHeight}}px">
+    <block wx:for="{{ navTab }}" wx:key="key">
+        <swiper-item>
+            <view class="content">
+              <scroll-view class="scrollview-list" scroll-y="true" style="height:{{scrollHeight}}px" bindscroll="scroll" bindscrolltolower="bindscrolltolower" scroll-top="{{scrollTop}}">
+                <view class="list" wx:for="{{orderInfos}}" wx:key="{{index}}" style=''>
+                  <view bindtap='detailOrder' data-orderId='{{item[1]}}'>
+                    <view class="item-headerview">
+                      <view class="headerview-wrap">
+                        <text class='ordercode'>订单号 : {{item[1]}}</text>
+                        <view class="ordertime">{{item[3]}}</view>
+                      </view>
+                      <view class="status" wx:if='{{item[2] == 1}}'>待付款</view>
+                      <view class="status" wx:elif='{{item[2] == 2}}'>待发货</view>
+                      <view class="status" wx:elif='{{item[2] == 3}}'>部分发货</view>
+                      <view class="status" wx:elif='{{item[2] == 4}}'>已发货</view>
+                      <view class="status" wx:elif='{{item[2] == 5}}'>已完成</view>
+                      <view class="status" wx:elif='{{item[2] == 6}}'>已退款</view>
+                      <view class="status" wx:elif='{{item[2] == 7}}'>已取消</view>
+                      <view class="status" wx:elif='{{item[2] == 8}}'>超时关闭</view>
+                      <view class="status" wx:elif='{{item[2] == 9}}'>支付失败关闭</view>
+                      <view class="status" wx:elif='{{item[2] == 10}}'>支付成功库存异常</view>
+                      <view class="status" wx:elif='{{item[2] == 11}}'>退款中</view>
+                      <view class="status" wx:elif='{{item[2] == 12}}'>第三方发货</view>
+                      <view class="status" wx:else></view>
+                    </view>
+                    <view class="item-body">
+                      <image class="img" src="{{item[5]}}" mode='scaleToFill' />
+                      <view class="goodsinfo">
+                        <text class="goodsname">{{item[4]}}</text>
+                        <view class='row'>
+                          <text class="orderPrice" wx:if="{{item[7]}}"><text class="pricenum" >{{item[7]}}</text>位好友</text>
+                          <text class="orderPrice" wx:if="{{item[6]}}"><text class="pricenum" >{{item[6]}}</text>元</text>
+                          <text class="orderPrice" wx:if="{{item[10]}}"><text class="pricenum">{{item[10]}}</text>步</text>
+                        </view>
+                      </view>
+                    </view>
+                  </view>
+                  <view class="item-bottom">
+                    <view class='line'></view>
+                    <view class="btn-container">
+                      <button class='btn active-btn' wx:if='{{item[2] == 1}}' catchtap='toPay' data-orderid='{{item[1]}}'>确定付款</button>
+                      <button class='btn active-btn' wx:if='{{item[2] == 2}}' catchtap='remindShipments' data-orderid='{{item[1]}}'>提示发货</button>
+                      <button class='btn ' wx:if='{{item[2] == 3 || item[2] == 4 }}' catchtap='viewShipping' data-orderid='{{item[1]}}' style='border: 1px soild #999'>查看物流</button>
+                      <button class='btn active-btn' wx:if='{{item[2] == 3 || item[2] == 4}}' catchtap='confirmReceive' data-orderid='{{item[1]}}'>确认收货</button>
+                      <button class='btn active-btn' wx:if='{{item[2] == 5}}' catchtap='buyAgain' data-goodsid='{{item[8]}}'>再来一单</button>
+                      <navigator open-type='navigate' path='{{item[11]}}' app-id='{{item[12]}}' target="miniProgram" class='btn active-btn' wx:if="{{item[11] != '' && item[12] != '' && item[2] != 12}}">前往领取</navigator>
+                      <navigator open-type='navigate' path='{{item[11]}}' app-id='{{item[12]}}' target="miniProgram" class='btn active-btn' wx:if="{{item[11] != '' && item[12] != '' && item[2] == 12}}">前往领取</navigator>
+                    </view>
+                  </view>
+                </view>
+                <view wx:if="{{!orderInfos.length}}" style="text-align: center;">暂无数据</view>
+              </scroll-view>
             </view>
-            <!-- 根据订单状态展示不同信息 -->
-            <view class="status" wx:if='{{item[2] == 1}}'>待付款</view>
-            <view class="status" wx:elif='{{item[2] == 2}}'>待发货</view>
-            <view class="status" wx:elif='{{item[2] == 3}}'>部分发货</view>
-            <view class="status" wx:elif='{{item[2] == 4}}'>已发货</view>
-            <view class="status" wx:elif='{{item[2] == 5}}'>已完成</view>
-            <view class="status" wx:elif='{{item[2] == 6}}'>已退款</view>
-            <view class="status" wx:elif='{{item[2] == 7}}'>已取消</view>
-            <view class="status" wx:elif='{{item[2] == 8}}'>超时关闭</view>
-            <view class="status" wx:elif='{{item[2] == 9}}'>支付失败关闭</view>
-            <view class="status" wx:elif='{{item[2] == 10}}'>支付成功库存异常</view>
-            <view class="status" wx:elif='{{item[2] == 11}}'>退款中</view>
-            <view class="status" wx:elif='{{item[2] == 12}}'>第三方发货</view>
-            <view class="status" wx:else></view>
-          </view>
-          <view class="item-body">
-            <!-- <image class="img" src="http://testbbcimage.leimingtech.com{{item.goodsImage}}" mode='scaleToFill' /> -->
-            <image class="img" src="{{item[5]}}" mode='scaleToFill' />
-            <view class="goodsinfo">
-              <text class="goodsname">{{item[4]}}</text>
-              <view class='row'>
-                <text class="orderPrice" wx:if="{{item[7]}}"><text class="pricenum" >{{item[7]}}</text>位好友</text>
-                <text class="orderPrice" wx:if="{{item[6]}}"><text class="pricenum" >{{item[6]}}</text>元</text>
-                <text class="orderPrice" wx:if="{{item[10]}}"><text class="pricenum">{{item[10]}}</text>步</text>
-              </view>
-              <!-- <view class="btn-container">
-                <button class='btn active-btn' wx:if='{{item[2] == 1}}' catchtap='toPay' data-orderid='{{item[1]}}'>确定付款</button>
-                <button class='btn active-btn' wx:if='{{item[2] == 2}}' catchtap='remindShipments' data-orderid='{{item[1]}}'>提示发货</button>
-                <button class='btn ' wx:if='{{item[2] == 3 || item[2] == 4 }}' catchtap='viewShipping' data-orderid='{{item[1]}}'>查看物流</button>
-                <button class='btn active-btn' wx:if='{{item[2] == 3 || item[2] == 4}}' catchtap='confirmReceive' data-orderid='{{item[1]}}'>确认收货</button>
-                <button class='btn active-btn' wx:if='{{item[2] == 5}}' catchtap='buyAgain' data-goodsid='{{item[8]}}'>再来一单</button>
-              </view> -->
-            </view>
-          </view>
-        </view>
-        <view class="item-bottom">
-          <view class='line'></view>
-          <view class="btn-container">
-            <button class='btn active-btn' wx:if='{{item[2] == 1}}' catchtap='toPay' data-orderid='{{item[1]}}'>确定付款</button>
-            <button class='btn active-btn' wx:if='{{item[2] == 2}}' catchtap='remindShipments' data-orderid='{{item[1]}}'>提示发货</button>
-            <button class='btn ' wx:if='{{item[2] == 3 || item[2] == 4 }}' catchtap='viewShipping' data-orderid='{{item[1]}}' style='border: 1px soild #999'>查看物流</button>
-            <button class='btn active-btn' wx:if='{{item[2] == 3 || item[2] == 4}}' catchtap='confirmReceive' data-orderid='{{item[1]}}'>确认收货</button>
-            <button class='btn active-btn' wx:if='{{item[2] == 5}}' catchtap='buyAgain' data-goodsid='{{item[8]}}'>再来一单</button>
-            <navigator open-type='navigate' path='{{item[11]}}' app-id='{{item[12]}}' target="miniProgram" class='btn active-btn' wx:if="{{item[11] != '' && item[12] != '' && item[2] != 12}}">前往领取</navigator>
-            <navigator open-type='navigate' path='{{item[11]}}' app-id='{{item[12]}}' target="miniProgram" class='btn active-btn' wx:if="{{item[11] != '' && item[12] != '' && item[2] == 12}}">前往领取</navigator>
-          </view>
-        </view>
-      </view>
-      <view class="nomore-tips" hidden='{{isShow}}'>没有数据</view>
-    </scroll-view>
-  </view>
+        </swiper-item>
+    </block>
+  </swiper>
 </view>

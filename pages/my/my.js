@@ -2,12 +2,14 @@
 import {
     postAjax
 } from '../../utils/ajax.js';
+import data from '../../utils/addrdata.js';
 const utils = require('../../utils/util.js');
 const app = getApp() //获取应用实例
 
 Page({
     data: {
-        current: "news"
+        current: "news",
+        addressOptions: data   // 地址数据
     },
     onLoad: function() {
         let that = this
@@ -87,5 +89,17 @@ Page({
                 url: '/pages/my/my',
             })
         }
-    }
+    },
+    // 选择我的地址
+    onChooseAddress() {
+        this.setData({ addrboardVisible: true })
+    },
+    onCloseAddrBoard() {
+        this.setData({ addrboardVisible: false })
+    },
+    onChangeAddress(e) {
+        this.setData({ myAddress: e.detail.options.map((n) => n.label).join(' ') })
+        console.log('onChangeAddress', e.detail)
+    },
+
 })

@@ -4,7 +4,7 @@ text,
 view {
     font-family: "OpenSansRegular";
     font-size: 28rpx;
-    color: #000;
+    /* color: #000; */
 }
 
 

@@ -141,7 +141,7 @@
     </view> -->
   </view>
   <!-- 底部导航栏 -->
-  <wux-tabbar controlled current="{{ current }}" bindchange="onTabbarChange" position="bottom">
+  <wux-tabbar controlled theme="energized" current="{{ current }}" bindchange="onTabbarChange" position="bottom">
     <wux-tabbar-item title="首页" key="index">
       <wux-badge count="" slot="icon-on">
         <wux-icon wux-class="icon" type="ios-home" size="22" />

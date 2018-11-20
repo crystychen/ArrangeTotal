@@ -11,32 +11,31 @@ Page({
     navTab: [{
       tabName: "全部",
       state: 0,
-      poststate: 0
+      key: "0"
     },
     {
       tabName: "待付款",
       state: 1,
-      poststate: 1
+      key: "1"
     },
     {
       tabName: "待发货",
       state: 2,
-      poststate: 2
+      key: "2"
     },
     {
       tabName: "已发货",
       state: 3,
-      poststate: 4
+      key: "3"
     },
     {
       tabName: "已完成",
       state: 4,
-      poststate: 5
+      key: "4"
     }
     ],
-    currentNavtab: 0,
     page: 1,
-    size: 5,
+    size: 10,
     hasMoreData: true,
     sliderOffset: 0,
     sliderLeft: 0,
@@ -54,8 +53,7 @@ Page({
     var that = this;
     var sliderWidth = 60;
     this.setData({
-      currentNavtab: options.state || 0,
-      state: options.postState || 0
+      key: options.postState || 0
     })
     wx.getSystemInfo({
       success: function (res) {
@@ -96,25 +94,36 @@ Page({
 
   },
   //切换tab刷新数据
-  switchTab: function (e) {
-    var that = this;
-    var state = e.currentTarget.dataset.state;
-    var poststate = e.currentTarget.dataset.poststate;
-    if (state !== that.data.currentNavtab) {
-      that.setData({
-        currentNavtab: state,
-        state: poststate,
-        orderInfos: [], //数据源清空
-        page: 1,
-        sliderOffset: e.currentTarget.offsetLeft
+  onTabsChange: function (e) {
+    console.log('onTabsChange', e)
+    const { key } = e.detail
+    const index = this.data.navTab.map((n) => n.key).indexOf(key)
+    this.setData({
+        key,
+        index,
+    })
+  },
+  onSwiperChange(e) {
+    console.log('onSwiperChange', e)
+    const { current: index, source } = e.detail
+    const { key } = this.data.navTab[index]
+
+    if (!!source) {
+      this.setData({
+        key,
+        index
       })
-      wx.showLoading({ //期间为了显示效果可以添加一个过度的弹出框提示“加载中”  
-        title: '加载中',
-        icon: 'loading',
-      });
-      //刷新数据
-      that.getOrderList();
     }
+    this.setData({
+      orderInfos: [], //数据源清空
+      page: 1
+    })
+    wx.showLoading({ //期间为了显示效果可以添加一个过度的弹出框提示“加载中”  
+      title: '加载中',
+      icon: 'loading',
+    });
+    //刷新数据
+    this.getOrderList();
   },
   //获取列表数据渲染
   getOrderList: function () {
@@ -130,7 +139,7 @@ Page({
         method: 'order-list',
         params: {
           channelId: app.globalData.channelId,
-          state: that.data.state,
+          state: that.data.key,
           page: that.data.page,
           size: that.data.size
         }
